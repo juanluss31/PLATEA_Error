@@ -39,7 +39,7 @@ h1 {
     border-color: #f3c9c8;
     padding: .75rem 1.25rem;
 }
-img{
+input{
     display: block;
     margin: auto;
 }
@@ -48,11 +48,26 @@ img{
     <body>
         <div id="page">
             <div id="region-main">
-                <audio src="./audio.mp3" autoplay></audio>
                 <h1>Error</h1>
-                <div><img src="./img.jpeg" alt="eGNmh.jpg" border="0"></div><br>
+                <div>
+                <input class="reproductor" type="image" src="https://i.imgsrc.com/eGNmh.jpg" alt="eGNmh.jpg"></input>
+                <audio src="./audio.mp3"></audio>
+                <script>
+                    let boton = document.querySelector(".reproductor")
+                    let audioEtiqueta = document.querySelector("audio")
+                    boton.addEventListener("click", () => {
+                    audioEtiqueta.play()
+                    console.log(`Reproduciendo: ${audioEtiqueta.src}`)
+                    })
+                </script>
+                
+                
+                </div> 
+                <br>
                 <div class="alert-danger">Excepción - OOM command not allowed when used memory &gt; 'maxmemory'.</div>                            </div>
         </div>
+
+        
     
 
 
